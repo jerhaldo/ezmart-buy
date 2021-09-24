@@ -4,13 +4,13 @@ const connection = mysql.createConnection({
     user: 'root',
     password: '',
     port: '3306',
-    database: ''
+    database: 'i7317491_ci1'
 });
 
 connection.connect((err)=>{
     if(err)
     {
-        console.log('Ha ocurrido un error: '+ err);
+        console.log('Ha ocurrido un error en la conexión: '+ err);
     }
 })
 
