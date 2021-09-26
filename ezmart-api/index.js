@@ -15,6 +15,7 @@ app.set('port', port)
 //routes
 app.use('/api/dashboard', require('./routes_admin'))    //RUTAS PARA EL DASHBOARD
 app.use('/api/', require('./routes_client'))            //RUTAS PARA LA TIENDA
+app.use('/api/pedidos', require('./routes_pedidos'))    //RUTAS PARA LOS PEDIDOS
 
 //Iniciar Express
 app.listen(app.get('port'), (error)=> {
