@@ -75,14 +75,15 @@
                 },
                 "fonts": true
               },
-             "outputHashing": "all",
+             "outputHashing": "all"
            }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "material-dashboard-angular:build"
+            "browserTarget": "material-dashboard-angular:build",
+            "proxyConfig"  : "proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -167,8 +168,7 @@
   "defaultProject": "material-dashboard-angular",
   "schematics": {
     "@schematics/angular:component": {
-      "prefix": "app",
-      "styleext": "scss"
+      "prefix": "app"
     },
     "@schematics/angular:directive": {
       "prefix": "app"

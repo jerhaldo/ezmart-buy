@@ -22,6 +22,8 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { MostrarComponent } from './crud-pedidos/mostrar/mostrar.component';
+import { InfoPedidosComponent } from './crud-pedidos/info-pedidos/info-pedidos.component';
 
 @NgModule({
   imports: [
@@ -39,6 +41,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    MostrarComponent,
+    InfoPedidosComponent,
 
   ],
   providers: [],
