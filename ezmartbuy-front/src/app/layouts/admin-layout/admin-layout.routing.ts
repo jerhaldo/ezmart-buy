@@ -9,6 +9,8 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { ListarComponent } from 'app/crud-productos/listar/listar.component';
+import { AgregarComponent } from 'app/crud-productos/agregar/agregar.component';
+import { EditarComponent } from 'app/crud-productos/editar/editar.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -62,5 +64,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
-    { path: 'productos',        component: ListarComponent }
+    { path: 'productos',      component: ListarComponent },
+    { path: 'productos/add',  component: AgregarComponent },
+    { path: 'productos/edit/:id',  component: EditarComponent },
+
 ];

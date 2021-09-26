@@ -1,14 +1,12 @@
 const router = require('express').Router()
 const conn = require('./config/dbConnection')
-const multer = require('multer')
-const upload = multer({ dest: './public/data/uploads/' })
-//var multer = require('multer')
-//const multer = require('multer')
+
+
 
 // Asignar Rutas
 //********* RUTAS DE TESTEO A CONEXION CON BD *************//
 router.get('/', (req, res)=>{
-    let sql = 'select * from producto'    // MUESTRA TODAS Los productos
+    let sql = 'SELECT * FROM producto JOIN multimedia_producto ON producto.id_prod=multimedia_producto.id_prod where producto.estado=1;'    // MUESTRA TODAS Los productos
     conn.query(sql, (err, rows, fields)=>{
         if(err) throw err;
         else{
@@ -18,7 +16,7 @@ router.get('/', (req, res)=>{
 })
 router.get('/:id', (req, res)=>{
     const {id} = req.params
-    let sql = 'select * from producto where id_prod=?'    // MUESTRA EL PRODUCTO CON ESE ID
+    let sql = 'SELECT * FROM producto JOIN multimedia_producto ON producto.id_prod=multimedia_producto.id_prod where producto.id_prod=?'    // MUESTRA EL PRODUCTO CON ESE ID
     conn.query(sql,[id], (err, rows, fields)=>{
         if(err) throw err;
         else{
@@ -37,8 +35,29 @@ router.delete('/:id', (req, res)=>{
         }
     })
 })
-
-router.post('/', upload.single('uploaded_file') ,(req, res)=>{//añade un producto
+router.put('/:id', (req, res)=>{//Update
+    const {id} = req.params
+    const {id_tienda, id_categ,nombre_prod, desc_prod, 
+        precio_prod_act, precio_prod_ant, stock_prod, 
+        cant_ventas} = req.body
+    let sql = `UPDATE producto SET id_tienda = '${id_tienda}',
+    id_categ = '${id_categ}',
+    nombre_prod = '${nombre_prod}',
+    desc_prod = '${desc_prod}',
+    precio_prod_act = '${precio_prod_act}',
+    precio_prod_ant = '${precio_prod_ant}',
+    stock_prod = '${stock_prod}',
+    cant_ventas = '${cant_ventas}'
+    where id_prod = '${id}'
+    ` 
+    conn.query(sql, (err, rows, fields)=>{
+        if(err) throw err;
+        else{
+            res.json(rows)
+        }
+    })
+})
+router.post('/',(req, res)=>{//añade un producto
     const {id_tienda, id_categ,nombre_prod, desc_prod, 
         precio_prod_act, precio_prod_ant, stock_prod, 
         cant_ventas, oferta, estado} = req.body
@@ -67,27 +86,8 @@ router.put('/offer/:id', (req, res)=>{//añade oferta
         }
     })
 })
-router.put('/', (req, res)=>{//Update
-    const {id_prod,id_tienda, id_categ,nombre_prod, desc_prod, 
-        precio_prod_act, precio_prod_ant, stock_prod, 
-        cant_ventas} = req.body
-    let sql = `UPDATE producto SET id_tienda = '${id_tienda}',
-    id_categ = '${id_categ}',
-    nombre_prod = '${nombre_prod}',
-    desc_prod = '${desc_prod}',
-    precio_prod_act = '${precio_prod_act}',
-    precio_prod_ant = '${precio_prod_ant}',
-    stock_prod = '${stock_prod}',
-    cant_ventas = '${cant_ventas}'
-    where id_prod = '${id_prod}'
-    ` 
-    conn.query(sql,[id], (err, rows, fields)=>{
-        if(err) throw err;
-        else{
-            res.json(rows)
-        }
-    })
-})
+
+
 
 
 

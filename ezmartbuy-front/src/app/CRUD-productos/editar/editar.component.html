@@ -3,37 +3,37 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title">Añadir nuevo producto</h4>
-                        <p class="card-category">Completa el formulario para añadir un nuevo producto</p>
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title">Editar producto</h4>
+                        <p class="card-category">Completa el formulario para editar producto</p>
                     </div>
                     <div class="card-body">
-                        <form (ngSubmit)="agregarProducto()" enctype="multipart/form-data" method="post">
+                        <form (ngSubmit)="modificar()" enctype="multipart/form-data" method="post">
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" [(ngModel)]="producto.nombre_prod" placeholder="Nombre" class="form-control" />
+                                        <input type="text" [(ngModel)]="producto.nombre_prod" class="form-control" name="nombre"/>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" [(ngModel)]="producto.desc_prod" placeholder="Descripción" class="form-control" />
+                                        <input type="text" [(ngModel)]="producto.desc_prod" class="form-control" name="descripcion"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" [(ngModel)]="producto.precio_prod_act" placeholder="Precio" class="form-control" />
+                                        <input type="text" [(ngModel)]="producto.precio_prod_act"  class="form-control" name="precio" />
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" [(ngModel)]="producto.stock_prod" placeholder="Stock" class="form-control" />
+                                        <input type="text" [(ngModel)]="producto.stock_prod"  class="form-control" name="stock"/>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <select [(ngModel)]="producto.id_categ" class="form-control" id="categoria" required>
@@ -41,11 +41,9 @@
                                         </select>
                                       </div>
                                 </div>   
-                            </div>
+                            </div> -->
                             <hr>
-                            
-                            <input [(ngModel)]="img" type="file" class="form-control-file" name="uploaded_file">
-                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Agregar Producto</button>
+                            <button (click)="modificar()" mat-raised-button type="submit" class="btn btn-info pull-right">Editar Producto</button>
                         </form>
 
                     </div>
