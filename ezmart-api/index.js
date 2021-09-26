@@ -9,12 +9,15 @@ const app = express()
 //admitir
 app.use(express.json())
 
+
 //config
 app.set('port', port)
 
 //routes
 app.use('/api/dashboard', require('./routes_admin'))    //RUTAS PARA EL DASHBOARD
 app.use('/api/', require('./routes_client'))            //RUTAS PARA LA TIENDA
+app.use('/api/products', require('./routes_products'))            //RUTAS PARA LA productos
+app.use('/api/category', require('./routes_category'))            //RUTAS PARA LA CATEGORIAS
 
 //Iniciar Express
 app.listen(app.get('port'), (error)=> {
