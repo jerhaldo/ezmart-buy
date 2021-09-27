@@ -62,16 +62,13 @@ router.post('/',(req, res)=>{//añade un producto
         precio_prod_act, precio_prod_ant, stock_prod, 
         cant_ventas, oferta, estado} = req.body
     
-    let sql = `insert into producto(id_prod, id_tienda, id_categ, nombre_prod, desc_prod, precio_prod_act, precio_prod_ant, stock_prod, cant_ventas, oferta, estado) values (,'${id_tienda}',${id_categ},'${nombre_prod}', ${desc_prod}, 
-    ${precio_prod_act}', ${precio_prod_ant}', ${stock_prod}, ${cant_ventas}, ${oferta}, ${estado})`    // UPDATEA EL PRODUCTO CON ESE ID
+    let sql = `insert into producto(id_prod, id_tienda, id_categ, nombre_prod, desc_prod, precio_prod_act, precio_prod_ant, stock_prod, cant_ventas, oferta, estado) values ('','${id_tienda}','${id_categ}','${nombre_prod}', '${desc_prod}', '${precio_prod_act}', '${precio_prod_ant}', '${stock_prod}', '${cant_ventas}', '${oferta}', '${estado}')`    // UPDATEA EL PRODUCTO CON ESE ID
     
-    conn.query(sql,[id_tienda, id_categ,nombre_prod, desc_prod, 
-        precio_prod_act, precio_prod_ant, stock_prod, 
-        cant_ventas, oferta, estado], (err, rows, fields)=>{
+    conn.query(sql, (err, rows, fields)=>{
         
             if(err) throw err;
         else{
-            res.json(rows)
+            res.json(rows.insertId)
         }
     })
 })
@@ -86,6 +83,11 @@ router.put('/offer/:id', (req, res)=>{//añade oferta
         }
     })
 })
+
+router.get('/public/:img', (req, res)=>{
+    const {img} = req.params
+    res.sendFile( __dirname+`/public/data/uploads/${img}` );
+}); 
 
 
 

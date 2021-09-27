@@ -44,7 +44,8 @@
                             </div>
                             <hr>
                             
-                            <input [(ngModel)]="img" type="file" class="form-control-file" name="uploaded_file">
+                            <input (change)="onFileSelected($event)" #fileUpload type="file" class="form-control-file" name="img" accept="image/x-png,image/gif,image/jpeg">
+
                             <button mat-raised-button type="submit" class="btn btn-danger pull-right">Agregar Producto</button>
                         </form>
 

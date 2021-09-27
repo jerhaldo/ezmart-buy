@@ -27,8 +27,8 @@ export class ProductosService {
   getCategorias(){
     return this.http.get('/api/category');
   }
-  addImg(img:any){
-    return this.http.post('/api/upload',img);
+  addImg(img:any,id_prod:any){
+    return this.http.post('/api/upload/uploadimg'+'/'+id_prod,img);
   }
 }
 export interface Producto{

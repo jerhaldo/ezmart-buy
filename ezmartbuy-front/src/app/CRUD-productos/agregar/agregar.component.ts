@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService,Producto } from 'app/services/productos.service';
+
 import { Router } from '@angular/router';
 
 
@@ -31,20 +32,42 @@ export class AgregarComponent implements OnInit {
     this.getCategorias();
   }
   agregarProducto(){
-    //console.log(this.img)
-
+    console.log(this.img)
     
-    //this.productoService.addProducto(this.producto).subscribe();
-    this.productoService.addImg(this.img).subscribe(
+    this.productoService.addProducto(this.producto).subscribe(
+      res=>{
+        console.log(res);
+        this.agregarimg(res);
+      },err=>{
+        console.log(err)
+      }
+    );
+
+    //this.router.navigate(['/productos']);
+    
+  }
+  onFileSelected(event) {
+
+    const file:File = event.target.files[0];
+
+    if (file) {
+
+      const formData = new FormData();
+
+        formData.append("img",file);
+        this.img= formData;
+    }
+  }
+  agregarimg(id_prod:any){
+    
+    const formData = new FormData();
+    this.productoService.addImg(this.img,id_prod).subscribe(
       res=>{
         console.log(res);
       }
     );
-    //this.router.navigate(['/productos']);
-    
   }
   getCategorias(){
-
     this.productoService.getCategorias().subscribe(
       res=>{
         console.log(res);
