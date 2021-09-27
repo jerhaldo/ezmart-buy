@@ -14,6 +14,17 @@ router.get('/', (req, res)=>{
         }
     })
 })
+router.get('/tienda/:id', (req, res)=>{
+    const {id} = req.params;
+    let sql = 'SELECT * FROM producto JOIN multimedia_producto ON producto.id_prod=multimedia_producto.id_prod where producto.estado=1 and producto.id_tienda=?;'    // MUESTRA TODAS Los productos
+    conn.query(sql,[id], (err, rows, fields)=>{
+        if(err) throw err;
+        else{
+            res.json(rows)
+        }
+    })
+})
+
 router.get('/:id', (req, res)=>{
     const {id} = req.params
     let sql = 'SELECT * FROM producto JOIN multimedia_producto ON producto.id_prod=multimedia_producto.id_prod where producto.id_prod=?'    // MUESTRA EL PRODUCTO CON ESE ID

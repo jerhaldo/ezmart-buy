@@ -23,6 +23,14 @@ export class ListarComponent implements OnInit {
       err=> console.log(err)
 
     );
+    /* this.productoService.getProductosByTienda(id_tienda).subscribe(
+      res=>{
+        console.log(res);
+        this.ListarProducto=<any>res;
+      },
+      err=> console.log(err)
+
+    ); */
   }
   eliminarProducto(id:string){
     this.productoService.deleteProducto(id).subscribe(
