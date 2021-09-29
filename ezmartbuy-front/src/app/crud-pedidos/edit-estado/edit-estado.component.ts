@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -41,7 +42,7 @@ export class EditEstadoComponent implements OnInit {
     console.log(this.selectedPedido);
       this.editForm = this.formBuilder.group({
         id:[this.selectedPedido.id_orden],
-        fecha_compra:[this.selectedPedido.fecha_compra],
+        fecha_compra:[formatDate(this.selectedPedido.fecha_compra, 'fullDate', 'es-CL')],
         nombre_courier: [this.selectedPedido.nombre_courier],
         rut_usuario: [this.selectedPedido.rut_usuario],
         estado: [this.selectedPedido.estado]
