@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header card-header-danger">
+                    <div class="card-header card-header-warning">
                         <h4 class="card-title ">Productos de la tienda</h4>
                         <p class="card-category"> A continuación se muestran los productos de la tienda 1</p>
                     </div>
@@ -48,7 +48,7 @@
                                             {{empleado.apellido_pat}} {{empleado.apellido_mat}}
                                         </td>
                                         <td>
-                                            {{empleado.fecha_ingreso}}
+                                            {{empleado.fecha_ingreso | date}}
                                         </td>
                                         <td>
                                             {{empleado.telefono}}
@@ -57,7 +57,7 @@
                                             {{empleado.email}}
                                         </td>
                                         <td>
-                                            <button (click)="eliminarProducto(producto.id_prod)" mat-raised-button class="btn btn-danger fa fa-trash"></button>
+                                            <button (click)="despedirEmpleado(empleado.rut_usuario)" mat-raised-button class="btn btn-danger fa fa-trash"></button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -66,7 +66,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-  </div>
+</div>

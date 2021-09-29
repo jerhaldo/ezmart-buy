@@ -9,15 +9,15 @@ import { Empleado, EmpleadosService } from 'app/services/empleados.service';
 })
 export class ListarEmpleadosComponent implements OnInit {
   ListaEmpleados: Empleado[];
-  constructor(private productoService: EmpleadosService, private router: Router ) { }
+  constructor(private empleadoService: EmpleadosService, private router: Router ) { }
 
   ngOnInit(): void {
-    this.listarProductos(2)
+    this.listarEmpleados(2)   //ID DE LA TIENDA
   }
 
-  listarProductos(id:number){
+  listarEmpleados(id:number){
 
-    this.productoService.getEmpleados(id).subscribe(
+    this.empleadoService.getEmpleados(id).subscribe(
       res=>{
         this.ListaEmpleados=<any>res;
       },
@@ -26,19 +26,13 @@ export class ListarEmpleadosComponent implements OnInit {
     );
   }
 
-  /* despedirEmpleado(id:string){
-    this.productoService.deleteEmpleado(id).subscribe(
+  despedirEmpleado(rut_empleado:string){
+    this.empleadoService.deleteEmpleado(rut_empleado).subscribe(
       res=>{
-          console.log("se borro el producto")
-          this.listarProductos();
+          console.log("Se despidió al empleado con exito")
+          this.listarEmpleados(2);    //ID DE LA TIENDA
       },err=>{
         console.log(err)
-      }
-      );
-
-
-  } */
-  /* modificarProducto(id: string){
-    this.router.navigate(['/productos/edit/'+id]);
-  } */
-}
+      });
+    }
+  }

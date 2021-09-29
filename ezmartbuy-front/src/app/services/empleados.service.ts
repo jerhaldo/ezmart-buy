@@ -5,26 +5,23 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class EmpleadosService {
-  url = '/api/employees';
+  url = '/api/employees/';
   constructor(private http: HttpClient) { }
   
-  getEmpleados(id:number){
-    return this.http.get(this.url+'/'+id);
-
-  }
-  /* getProducto(id:string){
-    return this.http.get(this.url+'/'+id);
-  } */
-
-  addEmpleado(empleado:any){
-    return this.http.post(this.url,empleado);
+  getEmpleados(tienda_id:number){
+    return this.http.get(this.url + tienda_id);
   }
 
-  /* deleteProducto(id:string){
-    return this.http.delete(this.url+'/'+id);
-  } */
+  addEmpleado(contrato:any){
+    return this.http.post(this.url+'add',contrato);
+  }
+
+  deleteEmpleado(rut_empleado:string){
+    return this.http.delete(this.url+'delete/' + rut_empleado);
+  }
 
 }
+
 export interface Empleado{
     rut_usuario?: string;
     nombre_usuario?: string;
@@ -33,4 +30,10 @@ export interface Empleado{
     fecha_ingreso?: string;
     telefono?: string;
     email?: string;
+}
+
+export interface ContratoEmpleado{
+  id_tienda?: string;
+  rut_usuario?: string;
+  fecha_ingreso?: string;
 }
