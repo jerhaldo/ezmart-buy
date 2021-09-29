@@ -11,6 +11,8 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { ListarComponent } from 'app/crud-productos/listar/listar.component';
 import { AgregarComponent } from 'app/crud-productos/agregar/agregar.component';
 import { EditarComponent } from 'app/crud-productos/editar/editar.component';
+import { ListarEmpleadosComponent } from 'app/crud-empleados/listar-empleados/listar-empleados.component';
+import { AgregarEmpleadosComponent } from 'app/crud-empleados/agregar-empleados/agregar-empleados.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -67,5 +69,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'productos',      component: ListarComponent },
     { path: 'productos/add',  component: AgregarComponent },
     { path: 'productos/edit/:id',  component: EditarComponent },
+    { path: 'empleados',      component: ListarEmpleadosComponent },
+    { path: 'empleados/add',      component: AgregarEmpleadosComponent },
 
 ];

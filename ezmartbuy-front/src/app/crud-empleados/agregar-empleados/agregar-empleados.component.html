@@ -1,0 +1,28 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-warning">
+                        <h4 class="card-title">Añadir nuevo empleado</h4>
+                        <p class="card-category">Completa el formulario para añadir a un nuevo empleado.</p>
+                    </div>
+                    <div class="card-body">
+                        <form (ngSubmit)="contratarEmpleado()" enctype="multipart/form-data" method="post">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput type="text" [(ngModel)]="contrato_empleado.rut_usuario" placeholder="RUT Empleado *Sin puntos ni guión*" class="form-control" />
+                                          </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <button mat-raised-button type="submit" class="btn btn-success pull-right">Contratar Empleado</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
