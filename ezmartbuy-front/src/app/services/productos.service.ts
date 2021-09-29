@@ -10,6 +10,9 @@ export class ProductosService {
     return this.http.get(this.url);
 
   }
+  getProductosByTienda(id_tienda:string){
+    return this.http.get(this.url+'/tienda/'+id_tienda);
+  }
   getProducto(id:string){
     return this.http.get(this.url+'/'+id);
   }
