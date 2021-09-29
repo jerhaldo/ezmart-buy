@@ -1,0 +1,75 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-warning">
+                        <h4 class="card-title ">Productos de la tienda</h4>
+                        <p class="card-category"> A continuación se muestran los productos de la tienda</p>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <button mat-raised-button routerLink="/empleados/add" matTooltip="Contratar Empleado" [matTooltipPosition]="'above'" class="btn btn-success">
+                                <i class="material-icons">add</i> Agregar Empleado
+                            </button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary" >
+                                    <th>
+                                        RUT
+                                    </th>
+                                    <th>
+                                        Nombre
+                                    </th>
+                                    <th>
+                                        Apellidos
+                                    </th>
+                                    <th>
+                                        Fecha de inicio
+                                    </th>
+                                    <th>
+                                        Teléfono
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>                                        
+                                        Despedir
+                                    </th>
+                                </thead>
+                                <tbody >
+                                    <tr *ngFor="let empleado of ListaEmpleados">
+                                        <td>
+                                            {{empleado.rut_usuario}}
+                                        </td>
+                                        <td>
+                                            {{empleado.nombre_usuario}}
+                                        </td>
+                                        <td>
+                                            {{empleado.apellido_pat}} {{empleado.apellido_mat}}
+                                        </td>
+                                        <td>
+                                            {{empleado.fecha_ingreso | date}}
+                                        </td>
+                                        <td>
+                                            {{empleado.telefono}}
+                                        </td>
+                                        <td>
+                                            {{empleado.email}}
+                                        </td>
+                                        <td>
+                                            <button mat-raised-button (click)="despedirEmpleado(empleado.rut_usuario)" type="button" matTooltip="Despedir Empleado" [matTooltipPosition]="'above'" class="btn btn-danger">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

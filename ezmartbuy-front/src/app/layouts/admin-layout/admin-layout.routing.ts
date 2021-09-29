@@ -8,6 +8,12 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { ListarComponent } from 'app/crud-productos/listar/listar.component';
+import { AgregarComponent } from 'app/crud-productos/agregar/agregar.component';
+import { EditarComponent } from 'app/crud-productos/editar/editar.component';
+import { ListarEmpleadosComponent } from 'app/crud-empleados/listar-empleados/listar-empleados.component';
+import { AgregarEmpleadosComponent } from 'app/crud-empleados/agregar-empleados/agregar-empleados.component';
+
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -52,7 +58,7 @@ export const AdminLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-    { path: 'dashboard',      component: DashboardComponent },
+    { path: 'dashboard',      component: DashboardComponent },//acá las rutas
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
     { path: 'typography',     component: TypographyComponent },
@@ -60,4 +66,10 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
+    { path: 'productos',      component: ListarComponent },
+    { path: 'productos/add',  component: AgregarComponent },
+    { path: 'productos/edit/:id',  component: EditarComponent },
+    { path: 'empleados',      component: ListarEmpleadosComponent },
+    { path: 'empleados/add',      component: AgregarEmpleadosComponent },
+
 ];

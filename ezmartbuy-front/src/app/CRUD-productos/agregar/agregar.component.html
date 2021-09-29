@@ -1,0 +1,58 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Añadir nuevo producto</h4>
+                        <p class="card-category">Completa el formulario para añadir un nuevo producto</p>
+                    </div>
+                    <div class="card-body">
+                        <form (ngSubmit)="agregarProducto()" enctype="multipart/form-data" method="post">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <input type="text" [(ngModel)]="producto.nombre_prod" placeholder="Nombre" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <input type="text" [(ngModel)]="producto.desc_prod" placeholder="Descripción" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <input type="text" [(ngModel)]="producto.precio_prod_act" placeholder="Precio" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <input type="text" [(ngModel)]="producto.stock_prod" placeholder="Stock" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <select [(ngModel)]="producto.id_categ" class="form-control" id="categoria" required>
+                                            <option *ngFor="let categoria of ListarCategoria" [value]="categoria.id_categ">{{categoria.nombre_categ}}</option>
+                                        </select>
+                                      </div>
+                                </div>   
+                            </div>
+                            <hr>
+                            
+                            <input (change)="onFileSelected($event)" #fileUpload type="file" class="form-control-file" name="img" accept="image/x-png,image/gif,image/jpeg">
+
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Agregar Producto</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

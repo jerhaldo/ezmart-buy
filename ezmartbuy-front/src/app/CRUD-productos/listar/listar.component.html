@@ -1,0 +1,90 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Productos de la tienda</h4>
+                        <p class="card-category"> A continuación se muestran los productos de la tienda 1</p>
+                        
+                    </div>
+                    <div class="card-body">
+                        <button routerLink="/productos/add" mat-raised-button class="btn btn-success"><span class="fa fa-plus"></span> Añadir producto</button>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary" >
+                                    <th>
+                                        Imagen
+                                    </th>
+                                    <th>
+                                        Nombre
+                                    </th>
+                                    <th>
+                                        Descripción
+                                    </th>
+                                    <th>
+                                        Precio anterior
+                                    </th>
+                                    <th>
+                                        Precio actual
+                                    </th>
+                                    <th>
+                                        Stock
+                                    </th>
+                                    <th>
+                                        Ventas
+                                    </th>
+<!--                                     <th>
+                                        Oferta
+                                    </th> -->
+                                    <th>                                        
+                                        Editar
+                                    </th>
+                                    <th>                                        
+                                        Eliminar
+                                    </th>
+                                </thead>
+                                <tbody >
+                                    <tr *ngFor="let producto of ListarProducto">
+                                        <td>
+                                            <img src="http://localhost:3000/api/products/public/{{producto.arch_multi}}" alt="" height="100" width="100">
+                                        </td>
+                                        <td>
+                                            {{producto.nombre_prod}}
+                                        </td>
+                                        <td>
+                                            {{producto.desc_prod}}
+                                        </td>
+                                        <td>
+                                            {{producto.precio_prod_ant}}
+                                        </td>
+                                        <td>
+                                            {{producto.precio_prod_act}}
+                                        </td>
+                                        <td>
+                                            {{producto.stock_prod}}
+                                        </td>
+                                        <td>
+                                            {{producto.cant_ventas}}
+                                        </td>
+<!--                                         <td>
+                                            
+                                        </td> -->
+                                        <td>
+                                            <button (click)="modificarProducto(producto.id_prod)" mat-raised-button class="btn btn-info fa fa-pencil"></button>
+                                        </td>
+                                        <td>
+                                            <button (click)="eliminarProducto(producto.id_prod)" mat-raised-button class="btn btn-danger fa fa-trash"></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </div>
+  

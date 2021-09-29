@@ -22,6 +22,9 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { ListarComponent } from './crud-productos/listar/listar.component';
+import { AgregarComponent } from './crud-productos/agregar/agregar.component';
+import { EditarComponent } from './crud-productos/editar/editar.component';
 
 @NgModule({
   imports: [
@@ -39,6 +42,9 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    ListarComponent,
+    AgregarComponent,
+    EditarComponent,
 
   ],
   providers: [],

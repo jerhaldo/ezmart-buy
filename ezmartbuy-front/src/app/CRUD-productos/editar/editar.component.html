@@ -1,0 +1,55 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title">Editar producto</h4>
+                        <p class="card-category">Completa el formulario para editar producto</p>
+                    </div>
+                    <div class="card-body">
+                        <form (ngSubmit)="modificar()" enctype="multipart/form-data" method="post">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <input type="text" [(ngModel)]="producto.nombre_prod" class="form-control" name="nombre"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <input type="text" [(ngModel)]="producto.desc_prod" class="form-control" name="descripcion"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <input type="text" [(ngModel)]="producto.precio_prod_act"  class="form-control" name="precio" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <input type="text" [(ngModel)]="producto.stock_prod"  class="form-control" name="stock"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <select [(ngModel)]="producto.id_categ" class="form-control" id="categoria" required>
+                                            <option *ngFor="let categoria of ListarCategoria" [value]="categoria.id_categ">{{categoria.nombre_categ}}</option>
+                                        </select>
+                                      </div>
+                                </div>   
+                            </div> -->
+                            <hr>
+                            <button (click)="modificar()" mat-raised-button type="submit" class="btn btn-info pull-right">Editar Producto</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
