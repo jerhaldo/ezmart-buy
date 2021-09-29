@@ -57,10 +57,10 @@
                                             {{pedido.total}}
                                         </td>
                                         <td>
-                                            <button (click)="showInfo(pedido.id_orden)" type="button"></button>
+                                            <button (click)="showInfo(pedido.id_orden)" type="button" class="btn btn-primary">Información</button>
                                         </td>
                                         <td>
-                                            <button type="button"></button>
+                                            <button class="btn btn-primary" (click)="editEstado(pedido)">Cambiar Estado</button>
                                         </td>
                                     </tr>
                                 </tbody>

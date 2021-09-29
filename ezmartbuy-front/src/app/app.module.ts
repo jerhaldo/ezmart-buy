@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -24,6 +24,7 @@ import {
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { MostrarComponent } from './crud-pedidos/mostrar/mostrar.component';
 import { InfoPedidosComponent } from './crud-pedidos/info-pedidos/info-pedidos.component';
+import { EditEstadoComponent } from './crud-pedidos/edit-estado/edit-estado.component';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { InfoPedidosComponent } from './crud-pedidos/info-pedidos/info-pedidos.c
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    NgbModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
@@ -43,6 +45,7 @@ import { InfoPedidosComponent } from './crud-pedidos/info-pedidos/info-pedidos.c
     AdminLayoutComponent,
     MostrarComponent,
     InfoPedidosComponent,
+    EditEstadoComponent,
 
   ],
   providers: [],

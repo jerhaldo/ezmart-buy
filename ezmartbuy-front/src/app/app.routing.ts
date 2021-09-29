@@ -4,6 +4,7 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { EditEstadoComponent } from './crud-pedidos/edit-estado/edit-estado.component';
 
 const routes: Routes =[
   {
@@ -15,9 +16,10 @@ const routes: Routes =[
     component: AdminLayoutComponent,
     children: [{
       path: '',
-      loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
-    }]
-  }
+      loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)},
+      {path: '/edit/:id', component: EditEstadoComponent }
+    ]
+  }, 
 ];
 
 @NgModule({
