@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,6 +19,13 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import { ListarEmpleadosComponent } from 'app/crud-empleados/listar-empleados/listar-empleados.component';
 import { AgregarEmpleadosComponent } from 'app/crud-empleados/agregar-empleados/agregar-empleados.component';
+import localeESCL from '@angular/common/locales/es-CL';
+import { registerLocaleData } from '@angular/common';
+import { MostrarComponent } from 'app/crud-pedidos/mostrar/mostrar.component';
+import { InfoPedidosComponent } from 'app/crud-pedidos/info-pedidos/info-pedidos.component';
+import { EditEstadoComponent } from 'app/crud-pedidos/edit-estado/edit-estado.component';
+
+registerLocaleData(localeESCL, 'es-CL')
 
 @NgModule({
   imports: [
@@ -43,7 +50,13 @@ import { AgregarEmpleadosComponent } from 'app/crud-empleados/agregar-empleados/
     NotificationsComponent,
     UpgradeComponent,
     ListarEmpleadosComponent,
-    AgregarEmpleadosComponent
+    AgregarEmpleadosComponent,
+    MostrarComponent,
+    InfoPedidosComponent,
+    EditEstadoComponent,
+  ],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'es-CL'}
   ]
 })
 

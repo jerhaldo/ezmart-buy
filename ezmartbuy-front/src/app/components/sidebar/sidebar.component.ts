@@ -19,6 +19,7 @@ export const ROUTES: RouteInfo[] = [//acá se añade el botón
     { path: '/productos', title: 'Productos',  icon: 'list', class: '' },
     { path: '/empleados', title: 'Empleados',  icon: 'person', class: '' },
    // { path: '/productos/add', title: 'Añadir Productos',  icon: 'plus', class: '' }
+    { path: '/pedidos', title: 'Pedidos',  icon:'unarchive', class: '' },
 ];
 
 @Component({

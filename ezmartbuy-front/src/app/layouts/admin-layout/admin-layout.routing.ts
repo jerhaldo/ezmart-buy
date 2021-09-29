@@ -13,7 +13,9 @@ import { AgregarComponent } from 'app/crud-productos/agregar/agregar.component';
 import { EditarComponent } from 'app/crud-productos/editar/editar.component';
 import { ListarEmpleadosComponent } from 'app/crud-empleados/listar-empleados/listar-empleados.component';
 import { AgregarEmpleadosComponent } from 'app/crud-empleados/agregar-empleados/agregar-empleados.component';
-
+import { MostrarComponent } from 'app/crud-pedidos/mostrar/mostrar.component';
+import { InfoPedidosComponent } from 'app/crud-pedidos/info-pedidos/info-pedidos.component';
+import { EditEstadoComponent } from 'app/crud-pedidos/edit-estado/edit-estado.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -71,5 +73,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'productos/edit/:id',  component: EditarComponent },
     { path: 'empleados',      component: ListarEmpleadosComponent },
     { path: 'empleados/add',      component: AgregarEmpleadosComponent },
-
+    { path: 'pedidos',        component: MostrarComponent },
+    { path: 'pedidos/:id',    component: InfoPedidosComponent },
+    { path: '/edit/:id',      component: EditEstadoComponent }
 ];
