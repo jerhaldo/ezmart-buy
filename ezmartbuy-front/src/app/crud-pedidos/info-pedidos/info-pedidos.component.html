@@ -1,66 +1,59 @@
 
-<div class="container-fluid">
-
-    <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Orden de compra N° {{this.orden_id}}</h1>
-    
+<div class="main-content">
+    <div class="container-fluid">
     <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <div class="row justify-content-between">
-                <div class="col-2">
-                    <h6 class="m-0 font-weight-bold text-primary">Detalles del Pedido</h6>
-                </div>
-                <div class="col-1">
-                    <a href="#" class="btn btn-primary btn-circle justify-content-end">
-                        <i class="fas  fa-arrow-left "></i>
-                    </a>
+        <div class="card shadow mb-4">
+            <div class="card-header">
+                <div class="row justify-content-between">
+                    <div class="col-2">
+                        <h1 class="h3 mb-2 text-primary-800">Orden de compra N° {{this.orden_id}}</h1>
+                        <h6 class="m-0 font-weight-bold text-info">Detalles del Pedido</h6>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Imagen producto</th>
+                                <th>Categoría</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Precio anterior</th>
+                                <th>Precio actual</th>
+                                <th>Stock</th>
+                                <th>Ventas</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
                             <th>Imagen producto</th>
-                            <th>Categoría</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
-                            <th>Precio anterior</th>
-                            <th>Precio actual</th>
-                            <th>Stock</th>
-                            <th>Ventas</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                        <th>Imagen producto</th>
-                            <th>Categoría</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
-                            <th>Precio anterior</th>
-                            <th>Precio actual</th>
-                            <th>Stock</th>
-                            <th>Ventas</th>                   
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        <tr *ngFor="let data of infoPedido">
-                           <td> <img src={{data.arch_multi}} width="150" height="150">   </td>
-                            <td>{{data.nombre_categ}}</td>
-                            <td>{{data.nombre_prod}}</td>
-                            <td>{{data.desc_prod}}</td>
-                            <td>{{data.precio_prod_act}}</td>
-                            <td>{{data.precio_prod_ant}}</td>
-                            <td>{{data.stock_prod}}</td>
-                            <td>{{data.cant_ventas}}</td>
-    
-                        </tr>                    
-                    </tbody>
-                </table>
+                                <th>Categoría</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Precio anterior</th>
+                                <th>Precio actual</th>
+                                <th>Stock</th>
+                                <th>Ventas</th>                   
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr *ngFor="let data of infoPedido">
+                            <td> <img src={{data.arch_multi}} width="150" height="150">   </td>
+                                <td>{{data.nombre_categ}}</td>
+                                <td>{{data.nombre_prod}}</td>
+                                <td>{{data.desc_prod}}</td>
+                                <td>{{data.precio_prod_act}}</td>
+                                <td>{{data.precio_prod_ant}}</td>
+                                <td>{{data.stock_prod}}</td>
+                                <td>{{data.cant_ventas}}</td>
+        
+                            </tr>                    
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-    
-    </div>
+</div>

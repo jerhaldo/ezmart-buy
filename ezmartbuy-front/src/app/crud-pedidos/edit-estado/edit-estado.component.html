@@ -1,0 +1,46 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Cambiar Estado</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()" *ngIf="editForm">
+        <div class="card-body">
+            <div class="form-group row d-flex justify-content-center align-items-center">
+                <label for="id" class="col-form-label col-sm-2 text-right">ID:</label>
+                <div class="col-sm-5">
+                    <input type="text" formControlName="id" class="form-control" readonly/>
+                </div>
+            </div>
+            <div class="form-group row d-flex justify-content-center align-items-center">
+                <label for="fecha_compra" class="col-form-label col-sm-2 text-right">Fecha Compra:</label>
+                <div class="col-sm-5">
+                    <input type="text" formControlName="fecha_compra" class="form-control" readonly/>
+                </div>
+            </div>
+            <div class="form-group row d-flex justify-content-center align-items-center">
+                <label for="nombre_courier" class="col-form-label col-sm-2 text-right">Courier</label>
+                <div class="col-sm-5">
+                    <input type="text" formControlName="nombre_courier" class="form-control" readonly/>
+                </div>
+            </div>
+            <div class="form-group row d-flex justify-content-center align-items-center">
+                <label for="rut_usuario" class="col-form-label col-sm-2 text-right">Rut Usuario</label>
+                <div class="col-sm-5">
+                    <input type="text" formControlName="rut_usuario" class="form-control" readonly/>
+                </div>
+            </div>
+            <div class="form-group row d-flex justify-content-center align-items-center">
+                <label for="estado" class="col-form-label col-sm-2 text-right">Estado:</label>
+                <div class="col-sm-5">
+                    <input type="text" formControlName="estado" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button [disabled]="isLoading" class="btn btn-primary mr-2" (click)="modal.close('Cancel')">Cancelar</button>
+            <button [disabled]="isLoading" class="btn btn-primary mr-2">Actualizar</button>
+        </div>
+    </form>
+</div>

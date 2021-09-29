@@ -1,13 +1,21 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpClientModule} from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PedidosService {
 
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' })
+  };
+
   url = '/api/pedidos';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+
+  }
 
   //pedidos
   getPedidos(){
@@ -18,6 +26,15 @@ export class PedidosService {
   getPedido(id:number){
     return this.http.get(this.url+'/'+id);
   }
+
+  updatePedido(pedidos: { id: string; }) {
+    return this.http.put(this.url+'/'+pedidos.id, pedidos, this.httpOptions)
+  }
+
+//updatePedido(id:number){
+//  return this.http.put(this.url+'/edit/'+id, this.httpOptions)
+//}
+
 }
 
 export interface Pedidos{

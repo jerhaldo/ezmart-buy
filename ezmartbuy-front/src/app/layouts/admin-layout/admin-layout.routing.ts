@@ -10,6 +10,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { MostrarComponent } from 'app/crud-pedidos/mostrar/mostrar.component';
 import { InfoPedidosComponent } from 'app/crud-pedidos/info-pedidos/info-pedidos.component';
+import { EditEstadoComponent } from 'app/crud-pedidos/edit-estado/edit-estado.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -63,5 +64,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'pedidos',        component: MostrarComponent },
-    { path: 'pedidos/:id',    component: InfoPedidosComponent }
+    { path: 'pedidos/:id',    component: InfoPedidosComponent },
+    { path: '/edit/:id',      component: EditEstadoComponent }
 ];
