@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NotificationsComponent } from 'app/notifications/notifications.component';
 import { Empleado, EmpleadosService } from 'app/services/empleados.service';
 
 @Component({
@@ -29,10 +30,13 @@ export class ListarEmpleadosComponent implements OnInit {
   despedirEmpleado(rut_empleado:string){
     this.empleadoService.deleteEmpleado(rut_empleado).subscribe(
       res=>{
-          console.log("Se despidió al empleado con exito")
-          this.listarEmpleados(2);    //ID DE LA TIENDA
-      },err=>{
-        console.log(err)
-      });
-    }
+          console.log("Se despidió al empleado con exito");
+          //this.listarEmpleados(2);    //ID DE LA TIENDA
+      },
+      err=> console.log(err)
+    );
+    let notify = new NotificationsComponent();
+    notify.showNotificationMessage('top', 'left', 'danger', 1000, 'Empleado despedido.');
+    this.listarEmpleados(2);    //ID DE LA TIENDA
   }
+}

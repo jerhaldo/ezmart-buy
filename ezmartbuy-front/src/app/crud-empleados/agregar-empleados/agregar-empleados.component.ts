@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NotificationsComponent } from 'app/notifications/notifications.component';
 import { ContratoEmpleado, EmpleadosService } from 'app/services/empleados.service';
-
+declare var $: any;
 @Component({
   selector: 'app-agregar-empleados',
   templateUrl: './agregar-empleados.component.html',
@@ -24,14 +25,15 @@ export class AgregarEmpleadosComponent implements OnInit {
     this.contrato_empleado.id_tienda = '2';   //ID TIENDA
     this.empleadoService.addEmpleado(this.contrato_empleado).subscribe(
       res=>{
-        console.log(res);
+        console.log("Empleado agregado con éxito");
       },err=>{
         console.log(err)
       }
     );
-
-    //this.router.navigate(['/productos']);
     
+    let notify = new NotificationsComponent();
+    notify.showNotificationMessage('top', 'left', 'success', 1000, 'Empleado agregado con éxito');
+    this.router.navigate(['/empleados']);
   }
   
 }
