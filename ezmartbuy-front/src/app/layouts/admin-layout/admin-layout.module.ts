@@ -17,6 +17,8 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
+import { ListarEmpleadosComponent } from 'app/crud-empleados/listar-empleados/listar-empleados.component';
+import { AgregarEmpleadosComponent } from 'app/crud-empleados/agregar-empleados/agregar-empleados.component';
 
 @NgModule({
   imports: [
@@ -40,6 +42,8 @@ import {MatSelectModule} from '@angular/material/select';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    ListarEmpleadosComponent,
+    AgregarEmpleadosComponent
   ]
 })
 

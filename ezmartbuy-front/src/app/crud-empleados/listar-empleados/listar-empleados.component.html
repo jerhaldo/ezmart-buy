@@ -5,11 +5,13 @@
                 <div class="card">
                     <div class="card-header card-header-warning">
                         <h4 class="card-title ">Productos de la tienda</h4>
-                        <p class="card-category"> A continuación se muestran los productos de la tienda 1</p>
+                        <p class="card-category"> A continuación se muestran los productos de la tienda</p>
                     </div>
                     <div class="card-body">
                         <div>
-                            <button routerLink="/empleados/add" mat-raised-button class="btn btn-success"><span class="fa fa-plus"></span> Agregar Empleado</button>
+                            <button mat-raised-button routerLink="/empleados/add" matTooltip="Contratar Empleado" [matTooltipPosition]="'above'" class="btn btn-success">
+                                <i class="material-icons">add</i> Agregar Empleado
+                            </button>
                         </div>
                         <div class="table-responsive">
                             <table class="table">
@@ -57,7 +59,9 @@
                                             {{empleado.email}}
                                         </td>
                                         <td>
-                                            <button (click)="despedirEmpleado(empleado.rut_usuario)" mat-raised-button class="btn btn-danger fa fa-trash"></button>
+                                            <button mat-raised-button (click)="despedirEmpleado(empleado.rut_usuario)" type="button" matTooltip="Despedir Empleado" [matTooltipPosition]="'above'" class="btn btn-danger">
+                                                <i class="material-icons">close</i>
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>
