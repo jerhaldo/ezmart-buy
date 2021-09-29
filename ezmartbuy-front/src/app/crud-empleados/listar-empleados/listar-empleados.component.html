@@ -1,0 +1,72 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Productos de la tienda</h4>
+                        <p class="card-category"> A continuación se muestran los productos de la tienda 1</p>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <button routerLink="/empleados/add" mat-raised-button class="btn btn-success"><span class="fa fa-plus"></span> Agregar Empleado</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary" >
+                                    <th>
+                                        RUT
+                                    </th>
+                                    <th>
+                                        Nombre
+                                    </th>
+                                    <th>
+                                        Apellidos
+                                    </th>
+                                    <th>
+                                        Fecha de inicio
+                                    </th>
+                                    <th>
+                                        Teléfono
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>                                        
+                                        Despedir
+                                    </th>
+                                </thead>
+                                <tbody >
+                                    <tr *ngFor="let empleado of ListaEmpleados">
+                                        <td>
+                                            {{empleado.rut_usuario}}
+                                        </td>
+                                        <td>
+                                            {{empleado.nombre_usuario}}
+                                        </td>
+                                        <td>
+                                            {{empleado.apellido_pat}} {{empleado.apellido_mat}}
+                                        </td>
+                                        <td>
+                                            {{empleado.fecha_ingreso}}
+                                        </td>
+                                        <td>
+                                            {{empleado.telefono}}
+                                        </td>
+                                        <td>
+                                            {{empleado.email}}
+                                        </td>
+                                        <td>
+                                            <button (click)="eliminarProducto(producto.id_prod)" mat-raised-button class="btn btn-danger fa fa-trash"></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </div>

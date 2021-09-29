@@ -25,6 +25,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { ListarComponent } from './crud-productos/listar/listar.component';
 import { AgregarComponent } from './crud-productos/agregar/agregar.component';
 import { EditarComponent } from './crud-productos/editar/editar.component';
+import { AgregarEmpleadosComponent } from './crud-empleados/agregar-empleados/agregar-empleados.component';
+import { ListarEmpleadosComponent } from './crud-empleados/listar-empleados/listar-empleados.component';
 
 @NgModule({
   imports: [
@@ -45,6 +47,8 @@ import { EditarComponent } from './crud-productos/editar/editar.component';
     ListarComponent,
     AgregarComponent,
     EditarComponent,
+    AgregarEmpleadosComponent,
+    ListarEmpleadosComponent,
 
   ],
   providers: [],
