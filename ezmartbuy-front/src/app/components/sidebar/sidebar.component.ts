@@ -15,7 +15,7 @@ export const ROUTES: RouteInfo[] = [//acá se añade el botón
     { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
     { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
     { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
-    { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
+    //{ path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
     { path: '/productos', title: 'Productos',  icon: 'list', class: '' },
     { path: '/empleados', title: 'Empleados',  icon: 'person', class: '' },
    // { path: '/productos/add', title: 'Añadir Productos',  icon: 'plus', class: '' }
