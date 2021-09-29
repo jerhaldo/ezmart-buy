@@ -22,9 +22,6 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { MostrarComponent } from './crud-pedidos/mostrar/mostrar.component';
-import { InfoPedidosComponent } from './crud-pedidos/info-pedidos/info-pedidos.component';
-import { EditEstadoComponent } from './crud-pedidos/edit-estado/edit-estado.component';
 
 @NgModule({
   imports: [
@@ -43,10 +40,6 @@ import { EditEstadoComponent } from './crud-pedidos/edit-estado/edit-estado.comp
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    MostrarComponent,
-    InfoPedidosComponent,
-    EditEstadoComponent,
-
   ],
   providers: [],
   bootstrap: [AppComponent]
