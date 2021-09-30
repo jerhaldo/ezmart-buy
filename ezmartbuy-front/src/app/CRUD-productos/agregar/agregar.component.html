@@ -12,34 +12,44 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" [(ngModel)]="producto.nombre_prod" placeholder="Nombre" class="form-control" />
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput type="text" [(ngModel)]="producto.nombre_prod" placeholder="Nombre" class="form-control" />
+                                        </mat-form-field>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <input type="text" [(ngModel)]="producto.desc_prod" placeholder="Descripción" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="form-group">
-                                        <input type="text" [(ngModel)]="producto.precio_prod_act" placeholder="Precio" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="form-group">
-                                        <input type="text" [(ngModel)]="producto.stock_prod" placeholder="Stock" class="form-control" />
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput type="text" [(ngModel)]="producto.desc_prod" placeholder="Descripción" class="form-control" />
+                                        </mat-form-field>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <select [(ngModel)]="producto.id_categ" class="form-control" id="categoria" required>
-                                            <option *ngFor="let categoria of ListarCategoria" [value]="categoria.id_categ">{{categoria.nombre_categ}}</option>
-                                        </select>
-                                      </div>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput type="number" [(ngModel)]="producto.precio_prod_act" placeholder="Precio" class="form-control" />
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput type="number" [(ngModel)]="producto.stock_prod" placeholder="Stock" class="form-control" />
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <mat-select [(ngModel)]="producto.id_categ" class="form-control" id="categoria" required placeholder="Categoría">
+                                            <mat-option *ngFor="let categoria of ListarCategoria" [value]="categoria.id_categ">
+                                                {{categoria.nombre_categ}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
                                 </div>   
                             </div>
                             <hr>
