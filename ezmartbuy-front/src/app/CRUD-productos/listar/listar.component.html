@@ -4,14 +4,23 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-danger">
-                        <h4 class="card-title ">Productos de la tienda</h4>
-                        <p class="card-category"> A continuación se muestran los productos de la tienda 1</p>
-                        
+                        <div class="row">
+                            <div class="col-md-11">
+                                <h4 class="card-title ">Productos de la tienda</h4>
+                                <p class="card-category"> A continuación se muestran los productos de la tienda</p>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="text-right">
+                                    <button mat-raised-button routerLink="/productos/add" matTooltip="Agregar producto" [matTooltipPosition]="'above'" class="btn btn-success btn-round btn-just-icon btn-lg">
+                                        <i class="material-icons">add</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
-                        <button routerLink="/productos/add" mat-raised-button class="btn btn-success"><span class="fa fa-plus"></span> Añadir producto</button>
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table text-center">
                                 <thead class=" text-primary" >
                                     <th>
                                         Imagen
@@ -70,11 +79,15 @@
 <!--                                         <td>
                                             
                                         </td> -->
-                                        <td>
-                                            <button (click)="modificarProducto(producto.id_prod)" mat-raised-button class="btn btn-info fa fa-pencil"></button>
+                                        <td class="justify-center">
+                                            <button mat-raised-button (click)="modificarProducto(producto.id_prod)" type="button" matTooltip="Editar Producto" [matTooltipPosition]="'above'" class="btn btn-warning btn-just-icon btn-round">
+                                                <i class="material-icons">edit</i>
+                                            </button>
                                         </td>
                                         <td>
-                                            <button (click)="eliminarProducto(producto.id_prod)" mat-raised-button class="btn btn-danger fa fa-trash"></button>
+                                            <button mat-raised-button (click)="eliminarProducto(producto.id_prod)" type="button" matTooltip="Eliminar Producto" [matTooltipPosition]="'above'" class="btn btn-danger btn-just-icon btn-round">
+                                                <i class="material-icons">close</i>
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>
