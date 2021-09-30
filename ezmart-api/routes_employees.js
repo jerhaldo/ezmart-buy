@@ -26,7 +26,7 @@ router.post('/add', (req, res)=>{
                 UPDATE usuario SET rol = 2 WHERE rut_usuario = ${rut_usuario}`
                 //INSERT EN TRABAJADORES Y ACTUALIZAR EL ROL DEL USUARIO A TRABAJADOR (ROL = 2)
     conn.query(sql, (err, rows, fields)=>{
-        if(err){
+        /* if(err){
             console.log(err)
             res.status(500)
             res.send('Error en la creación del empleado')
@@ -34,6 +34,10 @@ router.post('/add', (req, res)=>{
         else{
             res.status(201)
             res.send('Empleado agregado con exito.')
+        } */
+        if(err) throw err;
+        else{
+            res.json('Empleado agregado con exito.')
         }
     })
 })
@@ -46,14 +50,9 @@ router.delete('/delete/:rut_usuario', (req, res)=>{
                 UPDATE usuario SET rol = 0 WHERE rut_usuario = ${rut_usuario}`
                 //DELETE DE TRABAJADORES Y ACTUALIZAR EL ROL DEL USUARIO A NORMAL (ROL = 0)
     conn.query(sql, (err, rows, fields)=>{
-        if(err){
-            console.log(err)
-            res.status(500)
-            res.send('Error en la eliminación del empleado')
-        }
+        if(err) throw err;
         else{
-            res.status(201)
-            res.send('Empleado despedido con exito.')
+            res.json('Empleado eliminado con exito.')
         }
     })
 })
