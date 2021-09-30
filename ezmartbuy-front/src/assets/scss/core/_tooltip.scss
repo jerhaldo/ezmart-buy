@@ -45,9 +45,11 @@
 
 .tooltip-inner, .mat-tooltip{
     padding: 10px 15px;
-    min-width: 130px;
+    min-width: 150px;
 }
 
 .mat-tooltip{
     text-align: center;
+    font-size: 13px;
+
 }
