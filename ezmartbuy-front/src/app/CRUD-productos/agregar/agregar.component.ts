@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductosService,Producto } from 'app/services/productos.service';
 
 import { Router } from '@angular/router';
+import { NotificationsComponent } from 'app/notifications/notifications.component';
 
 
 @Component({
@@ -59,11 +60,17 @@ export class AgregarComponent implements OnInit {
     }
   }
   agregarimg(id_prod:any){
-    
+    let notify = new NotificationsComponent();
     const formData = new FormData();
     this.productoService.addImg(this.img,id_prod).subscribe(
       res=>{
         console.log(res);
+        notify.showNotificationMessage('top', 'left', 'success', 1000, 'Se ha agregado un producto.');
+        this.router.navigate(['/productos']);
+      },
+      err=>{
+        console.log(err);
+        notify.showNotificationMessage('top', 'left', 'danger', 1000, 'Error en agregar el producto.');
       }
     );
   }

@@ -28,15 +28,17 @@ export class ListarEmpleadosComponent implements OnInit {
   }
 
   despedirEmpleado(rut_empleado:string){
-    this.empleadoService.deleteEmpleado(rut_empleado).subscribe(
-      res=>{
-          console.log("Se despidió al empleado con exito");
-          //this.listarEmpleados(2);    //ID DE LA TIENDA
-      },
-      err=> console.log(err)
-    );
     let notify = new NotificationsComponent();
-    notify.showNotificationMessage('top', 'left', 'danger', 1000, 'Empleado despedido.');
-    this.listarEmpleados(2);    //ID DE LA TIENDA
+    this.empleadoService.deleteEmpleado(rut_empleado).subscribe(    
+      res=>{
+          console.log(res);
+          notify.showNotificationMessage('top', 'left', 'warning', 1000, 'Se ha despedido a un empleado.');
+          this.listarEmpleados(2);    //ID DE LA TIENDA
+      },
+      err=> {
+        console.log(err);
+        notify.showNotificationMessage('top', 'left', 'danger', 1000, 'Error en despedir al empleado.');
+      }
+    );
   }
 }

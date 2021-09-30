@@ -23,17 +23,17 @@ export class AgregarEmpleadosComponent implements OnInit {
 
   contratarEmpleado(){
     this.contrato_empleado.id_tienda = '2';   //ID TIENDA
+    let notify = new NotificationsComponent();
     this.empleadoService.addEmpleado(this.contrato_empleado).subscribe(
       res=>{
-        console.log("Empleado agregado con éxito");
+        console.log(res);
+        notify.showNotificationMessage('top', 'left', 'success', 1000, 'Se ha agregado a un empleado.');
+        this.router.navigate(['/empleados']);
       },err=>{
         console.log(err)
+        notify.showNotificationMessage('top', 'left', 'danger', 1000, 'Error en agregar empleado.');
       }
     );
-    
-    let notify = new NotificationsComponent();
-    notify.showNotificationMessage('top', 'left', 'success', 1000, 'Empleado agregado con éxito');
-    this.router.navigate(['/empleados']);
   }
   
 }

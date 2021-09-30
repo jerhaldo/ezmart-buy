@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Producto, ProductosService} from '../../services/productos.service';
 import { Router } from '@angular/router';
+import { NotificationsComponent } from 'app/notifications/notifications.component';
 @Component({
   selector: 'app-listar',
   templateUrl: './listar.component.html',
@@ -36,14 +37,17 @@ export class ListarComponent implements OnInit {
     );
   }
   eliminarProducto(id:string){
+    let notify = new NotificationsComponent();
     this.productoService.deleteProducto(id).subscribe(
       res=>{
-          console.log("se borro el producto")
+          console.log("se borro el producto");
+          notify.showNotificationMessage('top', 'left', 'warning', 1000, 'Se ha eliminado un producto.');
           this.listarProductos();
       },err=>{
-        console.log(err)
+        console.log(err);
+        notify.showNotificationMessage('top', 'left', 'danger', 1000, 'Error en eliminar el producto.');
       }
-      );
+    );
 
 
   }

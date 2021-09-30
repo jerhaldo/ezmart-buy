@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NotificationsComponent } from 'app/notifications/notifications.component';
 import {ProductosService,Producto} from '../../services/productos.service'
 @Component({
   selector: 'app-editar',
@@ -37,11 +38,14 @@ export class EditarComponent implements OnInit {
     }
   }
   modificar(){
+    let notify = new NotificationsComponent();
     this.productoService.editProducto(this.producto.id_prod,this.producto).subscribe(
       res=>{
         console.log(res);
+        notify.showNotificationMessage('top', 'left', 'info', 1000, 'Se ha modificado el producto.');
       },err=>{
         console.log(err);
+        notify.showNotificationMessage('top', 'left', 'danger', 1000, 'Error en modificar el producto.');
       }
     );
     this.router.navigate(['/productos/']);
