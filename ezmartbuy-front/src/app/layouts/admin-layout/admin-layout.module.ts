@@ -24,6 +24,9 @@ import { registerLocaleData } from '@angular/common';
 import { MostrarComponent } from 'app/crud-pedidos/mostrar/mostrar.component';
 import { InfoPedidosComponent } from 'app/crud-pedidos/info-pedidos/info-pedidos.component';
 import { EditEstadoComponent } from 'app/crud-pedidos/edit-estado/edit-estado.component';
+import { ListarComponent } from 'app/crud-productos/listar/listar.component';
+import { AgregarComponent } from 'app/crud-productos/agregar/agregar.component';
+import { EditarComponent } from 'app/crud-productos/editar/editar.component';
 
 registerLocaleData(localeESCL, 'es-CL')
 
@@ -54,6 +57,9 @@ registerLocaleData(localeESCL, 'es-CL')
     MostrarComponent,
     InfoPedidosComponent,
     EditEstadoComponent,
+    ListarComponent,
+    AgregarComponent,
+    EditarComponent,
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'es-CL'}
