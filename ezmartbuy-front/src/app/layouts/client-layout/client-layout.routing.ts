@@ -16,8 +16,9 @@ import { AgregarEmpleadosComponent } from 'app/crud-empleados/agregar-empleados/
 import { MostrarComponent } from 'app/crud-pedidos/mostrar/mostrar.component';
 import { InfoPedidosComponent } from 'app/crud-pedidos/info-pedidos/info-pedidos.component';
 import { EditEstadoComponent } from 'app/crud-pedidos/edit-estado/edit-estado.component';
+import { PrincipalComponent } from 'app/principal/principal.component';
 
-export const AdminLayoutRoutes: Routes = [
+export const ClientLayoutRoutes: Routes = [
     // {
     //   path: '',
     //   children: [ {
@@ -60,14 +61,14 @@ export const AdminLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-    { path: 'dashboard',      component: DashboardComponent },//acá las rutas
-    { path: 'user-profile',   component: UserProfileComponent },
-    //{ path: 'table-list',     component: TableListComponent },
-    //{ path: 'typography',     component: TypographyComponent },
-    //{ path: 'icons',          component: IconsComponent },
-    //{ path: 'maps',           component: MapsComponent },
-    //{ path: 'notifications',  component: NotificationsComponent },
-    //{ path: 'upgrade',        component: UpgradeComponent },
+    { path: 'client',      component: PrincipalComponent },//acá las rutas
+    /*{ path: 'user-profile',   component: UserProfileComponent },
+    { path: 'table-list',     component: TableListComponent },
+    { path: 'typography',     component: TypographyComponent },
+    { path: 'icons',          component: IconsComponent },
+    { path: 'maps',           component: MapsComponent },
+    { path: 'notifications',  component: NotificationsComponent },
+    { path: 'upgrade',        component: UpgradeComponent },
     { path: 'productos',      component: ListarComponent },
     { path: 'productos/add',  component: AgregarComponent },
     { path: 'productos/edit/:id',  component: EditarComponent },
@@ -75,5 +76,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'empleados/add',      component: AgregarEmpleadosComponent },
     { path: 'pedidos',        component: MostrarComponent },
     { path: 'pedidos/:id',    component: InfoPedidosComponent },
-    { path: '/edit/:id',      component: EditEstadoComponent }
+    { path: '/edit/:id',      component: EditEstadoComponent }*/
 ];
