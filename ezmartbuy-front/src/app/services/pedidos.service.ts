@@ -18,8 +18,8 @@ export class PedidosService {
   }
 
   //pedidos
-  getPedidos(){
-    return  this.http.get(this.url);
+  getPedidos(id_tienda:string){
+    return  this.http.get(this.url+'/tienda/'+id_tienda);
   }
 
   //info de un pedido

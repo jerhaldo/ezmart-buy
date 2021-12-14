@@ -15,7 +15,7 @@ export class AgregarComponent implements OnInit {
     id_prod: '',
     arch_multi: '',
     nombre_prod: '',
-    id_tienda:  '1',
+    id_tienda:  '2',
     id_categ:   '',
     desc_prod: '',
     precio_prod_act: '',

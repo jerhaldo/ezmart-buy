@@ -13,16 +13,18 @@ import { EditEstadoComponent } from '../edit-estado/edit-estado.component';
 export class MostrarComponent implements OnInit {
 
   MostrarPedidos: Pedidos[];
+  id_tienda: string;
 
   constructor(private PedidosService: PedidosService, private router: Router, private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.mostrarPedidos();
-    this.setPedidosList();
+    this.id_tienda = '2'
+    this.mostrarPedidos(this.id_tienda);
+    this.setPedidosList(this.id_tienda);
   }
 
-  mostrarPedidos() {
-    this.PedidosService.getPedidos().subscribe(
+  mostrarPedidos(id_tienda:string) {
+    this.PedidosService.getPedidos(id_tienda).subscribe(
       res=>{
         console.log(res),
         this.MostrarPedidos = <any>res;
@@ -48,8 +50,8 @@ export class MostrarComponent implements OnInit {
     })
   }
 
-  private setPedidosList() {
-    this.PedidosService.getPedidos().subscribe(x => {
+  private setPedidosList(id_tienda: string) {
+    this.PedidosService.getPedidos(id_tienda).subscribe(x => {
       this.MostrarPedidos = <any>x;
     })
   }
