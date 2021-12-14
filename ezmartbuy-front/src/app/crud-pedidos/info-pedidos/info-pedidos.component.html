@@ -40,7 +40,7 @@
                         </tfoot>
                         <tbody>
                             <tr *ngFor="let data of infoPedido">
-                            <td> <img src={{data.arch_multi}} width="150" height="150">   </td>
+                            <td> <img src="http://localhost:3000/api/products/public/{{data.arch_multi}}" width="150" height="150">   </td>
                                 <td>{{data.nombre_categ}}</td>
                                 <td>{{data.nombre_prod}}</td>
                                 <td>{{data.desc_prod}}</td>
