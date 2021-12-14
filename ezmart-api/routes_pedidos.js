@@ -1,9 +1,10 @@
 const router = require('express').Router()
 const db = require('./config/dbConnection')
 
-router.get('/', (req, res) => {
-    let sql = 'select id_orden,rut_usuario,id_tienda,fecha_compra,total,estado,nombre_courier from orden_compra as oc, courier as c where oc.id_courier =c. id_courier;'
-    db.query(sql, (err, rows, fields) => {
+router.get('/tienda/:id', (req, res) => {
+    const {id} = req.params;
+    let sql = 'select id_orden,rut_usuario,id_tienda,fecha_compra,total,estado,nombre_courier from orden_compra as oc, courier as c where oc.id_courier = c.id_courier and id_tienda = ? order by oc.fecha_compra desc;'
+    db.query(sql, [id], (err, rows, fields) => {
         if (err) throw err;
         else {
             res.json(rows)
